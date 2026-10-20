@@ -19,12 +19,6 @@ A 22-measure Spearman partial-correlation network (n = 107; EBICglasso; tuning =
 
 We treat this as a candidate association requiring confirmation in an independent sample, not as an established feature of the network. Two exploratory checks are not in the scripts: the tuning = 0.25 network (17 edges) and a case-dropping stability analysis (CS = 0.28).
 
-## Notes
-- Study 1 n = 35; Study 2 n = 107.
-- BTWF floor: 19 of 107 (17.8%) scored zero, close to the paper's 20%.
-- Three Study 2 rows have zero codes on Silhouettes and/or Mooney that may be missing-value codes. Not verified against the authors' codebook.
-- The network includes Big Five and IRI measures.
-
 ## Files
 - scripts/02_replication.R: correlations, correction families, face-to-other checks.
 - scripts/03_network.R: network and bootstrap. Requires readxl, bootnet, qgraph.
