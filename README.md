@@ -1,0 +1,30 @@
+# Replication of face identity processing individual differences
+
+Source: McCaffery, Robertson, Young & Burton (2018). Individual differences in face identity processing. Cognitive Research: Principles and Implications, 3:21. DOI 10.1186/s41235-018-0112-9.
+
+Data: Additional file 1 (CC BY 4.0). Not included in this repository; download it from the DOI.
+
+## Reproduced results (Study 2, n = 107)
+- GFMT-CFMT r = .50; GFMT-BTWF r = .20; CFMT-BTWF r = .33. All match the paper.
+- Eight face-to-other correlations reported in the text match to two decimals.
+
+## Multiple comparisons
+The paper does not state its correction family, so two families are reported:
+- Face-face (3 tests): GFMT-BTWF survives Benjamini-Hochberg correction (p_BH = .039).
+- All 88 tests: GFMT-BTWF does not survive (p_BH = .264).
+This split is our reconstruction, not the authors' procedure.
+
+## Network analysis (exploratory)
+A 22-measure Spearman partial-correlation network (n = 107; EBICglasso; tuning = 0) gave a GFMT-CFMT partial r of .30, 95% bootstrap CI [.14, .46], nonzero in all 1000 resamples. Tuning = 0 was chosen after tuning = 0.5 returned an empty network, so this choice is post hoc. The edge was present at tuning = 0.25 (r = .21) and in a reduced sample excluding three rows with zero-coded scores (n = 104, r = .27). It was absent at tuning = 0.5.
+
+We treat this as a candidate association requiring confirmation in an independent sample, not as an established feature of the network. Two exploratory checks are not in the scripts: the tuning = 0.25 network (17 edges) and a case-dropping stability analysis (CS = 0.28).
+
+## Notes
+- Study 1 n = 35; Study 2 n = 107.
+- BTWF floor: 19 of 107 (17.8%) scored zero, close to the paper's 20%.
+- Three Study 2 rows have zero codes on Silhouettes and/or Mooney that may be missing-value codes. Not verified against the authors' codebook.
+- The network includes Big Five and IRI measures.
+
+## Files
+- scripts/02_replication.R: correlations, correction families, face-to-other checks.
+- scripts/03_network.R: network and bootstrap. Requires readxl, bootnet, qgraph.
