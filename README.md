@@ -14,7 +14,7 @@ Of 85 correlations in Table 4, 77 reproduced the published values to two decimal
 - BTWF x Big 5 Openness: published r = .01; reanalysis r = .10 (.096).
 - CFMT x IRI Personal Distress: published r = .01; reanalysis r = .00 (.0019).
 
-These discrepancies are reported as found. We have written to the corresponding author to ask whether the published values are correct.
+These discrepancies are reported as found. We plan to ask the corresponding author whether the published values are correct.
 
 ## Multiple comparisons
 The paper does not state its correction family, so two families are reported:
