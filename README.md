@@ -8,6 +8,14 @@ Data: Additional file 1 (CC BY 4.0). Not included in this repository; download i
 - GFMT-CFMT r = .50; GFMT-BTWF r = .20; CFMT-BTWF r = .33. All match the paper.
 - Eight face-to-other correlations reported in the text match to two decimals.
 
+## Table 4 comparison (Study 2)
+Of 85 correlations in Table 4, 77 reproduced the published values to two decimals. Five further cells differed by one hundredth or less, consistent with rounding. Three point estimates differed beyond rounding:
+- Face-detection x Big 5 Extraversion: published r = -.05; reanalysis r = +.04 (.0445). The published 95% CI [-0.15, 0.23] matches ours.
+- BTWF x Big 5 Openness: published r = .01; reanalysis r = .10 (.096).
+- CFMT x IRI Personal Distress: published r = .01; reanalysis r = .00 (.0019).
+
+These discrepancies are reported as found. We have written to the corresponding author to ask whether the published values are correct.
+
 ## Multiple comparisons
 The paper does not state its correction family, so two families are reported:
 - Face-face (3 tests): GFMT-BTWF survives Benjamini-Hochberg correction (p_BH = .039).
@@ -22,3 +30,4 @@ We treat this as a candidate association requiring confirmation in an independen
 ## Files
 - scripts/02_replication.R: correlations, correction families, face-to-other checks.
 - scripts/03_network.R: network and bootstrap. Requires readxl, bootnet, qgraph.
+- scripts/05_table4_comparison.R: comparison of reanalysis against published Table 4 values.
