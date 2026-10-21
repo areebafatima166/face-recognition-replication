@@ -14,13 +14,20 @@ Of 85 correlations in Table 4, 77 reproduced the published values to two decimal
 - BTWF x Big 5 Openness: published r = .01; reanalysis r = .10 (.096).
 - CFMT x IRI Personal Distress: published r = .01; reanalysis r = .00 (.0019).
 
-These discrepancies are reported as found. We plan to ask the corresponding author whether the published values are correct.
+We wrote to the corresponding author about these cells. He replied that he expects the differences to reflect transcription errors and will check the original data when able. The cells remain unresolved pending that check.
 
 ## Multiple comparisons
 The paper does not state its correction family, so two families are reported:
 - Face-face (3 tests): GFMT-BTWF survives Benjamini-Hochberg correction (p_BH = .039).
-- All 88 tests: GFMT-BTWF does not survive (p_BH = .264).
+- All 88 tests: GFMT-CFMT and CFMT-BTWF survive; GFMT-BTWF does not (p_BH = .264).
 This split is our reconstruction, not the authors' procedure.
+
+## Factor analysis (preregistered and exploratory)
+A one-factor confirmatory factor model of the five face measures did not meet the preregistered fit criteria: χ²(5) = 9.10, p = .105; CFI = .92; RMSEA = .087 [.000, .177]; SRMR = .069. The general factor was defined mainly by CFMT (loading .85) and GFMT (.58); face detection's loading did not differ from zero.
+
+The preregistered variance-explained estimate was .265. It could not be evaluated reliably: 116 of 1000 bootstrap solutions (11.6%) were Heywood or out-of-range cases even with positive-variance bounds (`bounds = "pos.var"`), a deviation from the preregistration. The valid-solution interval [.22, .34] is a sensitivity check only and is not a test of H2.
+
+A two-factor model separating identity from perception tasks fit better than the one-factor model (Δχ²(1) = 7.44, p = .006). This model was specified after the preregistered test failed and is exploratory. Its identity factor depends on CFMT: without CFMT, the two-factor structure is still estimable, but the identity factor is weak (GFMT .36, BTWF .56) and the factor correlation is uncertain (r = .50, 95% CI [-.02, 1.01]).
 
 ## Network analysis (exploratory)
 A 22-measure Spearman partial-correlation network (n = 107; EBICglasso; tuning = 0) gave a GFMT-CFMT partial r of .30, 95% bootstrap CI [.14, .46], nonzero in all 1000 resamples. Tuning = 0 was chosen after tuning = 0.5 returned an empty network, so this choice is post hoc. The edge was present at tuning = 0.25 (r = .21) and in a reduced sample excluding three rows with zero-coded scores (n = 104, r = .27). It was absent at tuning = 0.5.
