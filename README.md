@@ -31,3 +31,5 @@ We treat this as a candidate association requiring confirmation in an independen
 - scripts/02_replication.R: correlations, correction families, face-to-other checks.
 - scripts/03_network.R: network and bootstrap. Requires readxl, bootnet, qgraph.
 - scripts/05_table4_comparison.R: comparison of reanalysis against published Table 4 values.
+- - scripts/06_cfa_preregistered.R: preregistered one-factor CFA and bounded bootstrap of variance explained (H1, H2).
+- scripts/07_cfa_sensitivity.R: exploratory two-factor model and post hoc no-CFMT sensitivity check.
