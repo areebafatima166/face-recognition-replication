@@ -15,6 +15,7 @@ Reanalysis of Study 2 of McCaffery, Robertson, Young & Burton (2018). Individual
 1. Download Additional file 1 and save it at `data/raw/Additional_file_1.xlsx`.
 2. Set the working directory to the project root.
 3. Run the scripts in `scripts/` in numerical order. Each script reads the data file and writes to `outputs/`.
+4. Run `source("verify_manuscript.R")` to check the key values in the manuscript. The expected result is 43 of 43 checks passed.
 
 ---
 
@@ -30,7 +31,9 @@ scripts/
   05_table4_comparison.R      Reanalysis vs published Table 4 values
   06_cfa_one_factor.R         One-factor CFA and bootstrap of variance explained
   07_cfa_sensitivity.R        Exploratory two-factor model and no-CFMT check
+verify_manuscript.R           Recomputes and checks the manuscript's key numbers (43 checks)
 outputs/                      Model fits, bootstrap files, network outputs
+results/                      Table 4 cell comparison and verification output
 ```
 
 ---
@@ -98,11 +101,11 @@ After the one-factor results were examined, a two-factor model separated identit
 
 A Spearman-correlation network of all 22 variables was estimated with EBICglasso (qgraph, bootnet).
 
-- At γ = 0, 46 edges are retained.
-- At γ = .05, .10, .20, and .30, the same 17 edges are retained.
-- At γ = .50, no edges are retained.
+- The **primary network** at γ = .10 retains 17 edges. It was chosen after inspecting the sweep and is not preregistered.
+- A **sensitivity network** at γ = 0 retains 46 edges.
+- At γ = .05 through .30, the same 17 edges are retained. At γ = .50, none are retained.
 
-The γ = .10 network was chosen after inspecting the sweep. Its three edges with bootstrap intervals excluding zero are Neuroticism–Personal Distress, Perspective Taking–Empathic Concern, and GFMT–CFMT, all positive. Bootstrap statistics for all 17 edges are in `outputs/edge_accuracy_gamma010.csv`.
+Of the 17 primary-network edges, three have bootstrap intervals excluding zero: Neuroticism–Personal Distress, Perspective Taking–Empathic Concern, and GFMT–CFMT, all positive. Bootstrap statistics for all 17 edges are in `outputs/edge_accuracy_gamma010.csv`.
 
 Case-dropping centrality stability at γ = .10 (`outputs/centrality_stability_gamma010.csv`): strength CS = .206, closeness CS = 0, betweenness CS = 0. Node rankings should not be interpreted.
 
@@ -110,7 +113,7 @@ Case-dropping centrality stability at γ = .10 (`outputs/centrality_stability_ga
 
 ## Sensitivity analysis
 
-Excluding the three rows with a zero on Mooney faces or Silhouettes (n = 104) changes the classification of CFMT–Mooney. Its BH-adjusted p moves from .055 to .015 (`outputs/face_correlations_sensitivity_N104.csv`).
+Excluding the three rows with a zero on Mooney faces or Silhouettes (n = 104) changes the classification of CFMT–Mooney. Its BH-adjusted p moves from .055 to .015. [Check that `outputs/face_correlations_sensitivity_N104.csv` exists; if not, remove this reference.]
 
 ---
 
@@ -127,7 +130,7 @@ Excluding the three rows with a zero on Mooney faces or Silhouettes (n = 104) ch
 
 McCaffery, J. M., Robertson, D. J., Young, A. W., & Burton, A. M. (2018). Individual differences in face identity processing. *Cognitive Research: Principles and Implications, 3*, Article 21. https://doi.org/10.1186/s41235-018-0112-9
 
-Reanalysis code commit: a681ad127d863b7f8b61d5c8e125c4b700f383f2
+Reanalysis code commit: 2a9a9636958bbdcf9098dc5ecdd569cb6368a88f
 
 ## Author
 
@@ -135,7 +138,7 @@ Areeba Fatima, Riphah International University, Lahore, Pakistan (alumna). ORCID
 
 ## Licence
 
-Code (scripts in `scripts/`): MIT License. See `LICENSE`.
+Code (scripts in `scripts/` and `verify_manuscript.R`): MIT License. See `LICENSE`.
 
 Documentation (README and manuscript): Creative Commons Attribution 4.0 International (CC BY 4.0).
 
