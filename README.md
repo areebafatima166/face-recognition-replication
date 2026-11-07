@@ -29,8 +29,7 @@ scripts/
   06_cfa_preregistered.R      Preregistered one-factor CFA and bootstrap (H1, H2)
   07_cfa_sensitivity.R        Exploratory two-factor model and no-CFMT check
 outputs/                      Model fits, bootstrap files, network outputs
-results/                      Table 4 comparison and session information
-docs/                         Replication report
+
 ```
 
 ---
