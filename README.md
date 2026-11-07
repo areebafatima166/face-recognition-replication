@@ -2,6 +2,8 @@
 
 Reanalysis of Study 2 of McCaffery, Robertson, Young & Burton (2018). Individual differences in face identity processing. *Cognitive Research: Principles and Implications, 3*, 21. https://doi.org/10.1186/s41235-018-0112-9
 
+**Status:** This analysis was not preregistered. It is a secondary reanalysis of publicly available data. The analyses were run after the data were obtained, and the one-factor and two-factor models were fitted after the published results were examined.
+
 **Data:** Additional file 1 (CC BY 4.0). Not included in this repository. Download it from the DOI above and save it as `data/raw/Additional_file_1.xlsx`.
 
 **Software:** R 4.6.1 (Windows 10 x64). Packages: readxl 1.6.0, lavaan 0.7.3, qgraph 1.10.1, bootnet 1.9.1, ggplot2 4.0.3.
@@ -10,9 +12,9 @@ Reanalysis of Study 2 of McCaffery, Robertson, Young & Burton (2018). Individual
 
 ## Reproducing the analyses
 
-1. Download Additional file 1 and place it at `data/raw/Additional_file_1.xlsx`.
+1. Download Additional file 1 and save it at `data/raw/Additional_file_1.xlsx`.
 2. Set the working directory to the project root.
-3. Run the scripts in `scripts/` in numerical order. Each script reads the data file and writes to `results/` or `outputs/`.
+3. Run the scripts in `scripts/` in numerical order. Each script reads the data file and writes to `outputs/`.
 
 ---
 
@@ -26,10 +28,9 @@ scripts/
   03_reproduce_table4.R       Table 4 reproduction (85 correlations)
   04_network_stability.R      Case-dropping stability of centrality
   05_table4_comparison.R      Reanalysis vs published Table 4 values
-  06_cfa_preregistered.R      Preregistered one-factor CFA and bootstrap (H1, H2)
+  06_cfa_one_factor.R         One-factor CFA and bootstrap of variance explained
   07_cfa_sensitivity.R        Exploratory two-factor model and no-CFMT check
 outputs/                      Model fits, bootstrap files, network outputs
-
 ```
 
 ---
@@ -67,19 +68,17 @@ The original article does not state its correction family, so two families are r
 
 ---
 
-## Preregistered factor analysis
+## One-factor confirmatory factor analysis (not preregistered)
 
-A one-factor confirmatory factor model of the five face measures (`scripts/06_cfa_preregistered.R`) was fitted with lavaan 0.7.3, using maximum likelihood, standardised variables, and the latent variance fixed at 1.
+A one-factor model of the five face measures tests the general face-factor account proposed by McCaffery et al. (2018) and Verhallen et al. (2017). It was fitted with lavaan 0.7.3 (`scripts/06_cfa_one_factor.R`), using maximum likelihood, standardised variables, and the latent variance fixed at 1. Fit is judged against conventional cutoffs (CFI ≥ .95, RMSEA ≤ .06, SRMR ≤ .08; Hu & Bentler, 1999).
 
-**Preregistered criteria:** [insert the fit criteria from the OSF preregistration, and whether the model met them].
-
-**Fit:** χ²(5) = 9.10, p = .105; CFI = .920; TLI = .841; RMSEA = .087, 90% CI [.000, .177]; SRMR = .069.
+**Fit:** χ²(5) = 9.10, p = .105; CFI = .920; TLI = .841; RMSEA = .087, 90% CI [.000, .177]; SRMR = .069. CFI and RMSEA fall short of the cutoffs; SRMR meets its cutoff.
 
 **Loadings:** CFMT .85, GFMT .58, BTWF .39, Mooney .27, face detection .19. The general factor is defined mainly by CFMT and GFMT.
 
-**Variance explained:** The preregistered estimate is .265, the mean of squared standardised loadings.
+**Variance explained:** .265, the mean of squared standardised loadings. This matches the original authors' estimate of about 25% of variance.
 
-**Bootstrap:** 1,000 resamples, fitted with `bounds = "pos.var"`, which departs from the preregistration. In 193 resamples (19.3%), at least one residual variance was exactly zero, which is a boundary solution. No resample failed to converge, produced an error, or had a loading above 1. The 807 resamples without a boundary solution gave a 95% interval of [.213, .333]. This interval is a sensitivity check and is not a test of H2.
+**Bootstrap:** 1,000 resamples, fitted with `bounds = "pos.var"`. In 193 resamples (19.3%), at least one residual variance was exactly zero, which is a boundary solution. No resample failed to converge, produced an error, or had a loading above 1. The 807 resamples without a boundary solution gave a 95% interval of [.213, .333]. This interval is a sensitivity check and is not a reliable estimate of the sampling distribution.
 
 Output files:
 - `outputs/cfa_one_factor.txt`, `outputs/cfa_two_factor.txt`, `outputs/cfa_model_comparison.txt`, `outputs/cfa_two_factor_noCFMT.txt`
@@ -89,9 +88,9 @@ The earlier file `outputs/cfa_boot_1000_bounded.rds` reported 116 invalid resamp
 
 ---
 
-## Exploratory two-factor model
+## Exploratory two-factor model (post hoc)
 
-After the preregistered test, a two-factor model separated identity measures (GFMT, CFMT, BTWF) from perception measures (face detection, Mooney faces). This model was not preregistered. It fit better than the one-factor model, Δχ²(1) = 7.44, p = .006. Its identity factor depends heavily on CFMT. Without CFMT, the identity factor is weak (GFMT .35, BTWF .56), and the factor correlation is imprecise (r = .50, 95% CI [−.02, 1.01]).
+After the one-factor results were examined, a two-factor model separated identity measures (GFMT, CFMT, BTWF) from perception measures (face detection, Mooney faces). It fit better than the one-factor model, Δχ²(1) = 7.44, p = .006. Because it was specified after inspecting the one-factor results, it is exploratory. Its identity factor depends heavily on CFMT. Without CFMT, the identity factor is weak (GFMT .35, BTWF .56), and the factor correlation is imprecise (r = .50, 95% CI [−.02, 1.01]).
 
 ---
 
@@ -103,7 +102,7 @@ A Spearman-correlation network of all 22 variables was estimated with EBICglasso
 - At γ = .05, .10, .20, and .30, the same 17 edges are retained.
 - At γ = .50, no edges are retained.
 
-The γ = .10 network was chosen after inspecting the sweep and is not preregistered. Its three edges with bootstrap intervals excluding zero are Neuroticism–Personal Distress, Perspective Taking–Empathic Concern, and GFMT–CFMT, all positive. Bootstrap statistics for all 17 edges are in `outputs/edge_accuracy_gamma010.csv`.
+The γ = .10 network was chosen after inspecting the sweep. Its three edges with bootstrap intervals excluding zero are Neuroticism–Personal Distress, Perspective Taking–Empathic Concern, and GFMT–CFMT, all positive. Bootstrap statistics for all 17 edges are in `outputs/edge_accuracy_gamma010.csv`.
 
 Case-dropping centrality stability at γ = .10 (`outputs/centrality_stability_gamma010.csv`): strength CS = .206, closeness CS = 0, betweenness CS = 0. Node rankings should not be interpreted.
 
@@ -119,18 +118,21 @@ Excluding the three rows with a zero on Mooney faces or Silhouettes (n = 104) ch
 
 - BTWF contains 19 zero scores (17.8%). The published text reports 20%, about 21 participants. The difference is unresolved.
 - The network tuning parameter was selected after inspecting the sweep.
-- The CFA bootstrap departs from the preregistration (`bounds = "pos.var"`).
+- The CFA bootstrap uses positive-variance bounds, and 19.3% of resamples are boundary solutions.
 - Table 4 discrepancies are unconfirmed pending the author's check of the original data.
 
 ---
 
 ## Citation
 
-McCaffery, J. M., Robertson, D. J., Young, A. W., & Burton, A. M. (2018). Individual differences in face identity processing. Cognitive Research: Principles and Implications, 3, Article 21. https://doi.org/10.1186/s41235-018-0112-9
+McCaffery, J. M., Robertson, D. J., Young, A. W., & Burton, A. M. (2018). Individual differences in face identity processing. *Cognitive Research: Principles and Implications, 3*, Article 21. https://doi.org/10.1186/s41235-018-0112-9
+
+Reanalysis code commit: a681ad127d863b7f8b61d5c8e125c4b700f383f2
 
 ## Author
 
 Areeba Fatima, Riphah International University, Lahore, Pakistan (alumna). ORCID: https://orcid.org/0009-0002-3981-3319
+
 ## Licence
 
 Code (scripts in `scripts/`): MIT License. See `LICENSE`.
