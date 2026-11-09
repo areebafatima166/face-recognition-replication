@@ -1,86 +1,124 @@
+# Replication of Individual Differences in Face Identity Processing
 
-## Reproduced results (Study 2, n = 107)
+## Project overview
 
-GFMT–CFMT r = .50; GFMT–BTWF r = .20; CFMT–BTWF r = .33. All match the paper at two decimals.
+This project examines individual differences in face identity processing using supplementary data from McCaffery et al. (2018). It includes a reproduction of selected correlation analyses and exploratory network analyses.
 
-Of the 85 correlations between face measures and other measures in Table 4, 77 reproduced to two decimals.
+**Scope:** The current Table 4 script reproduces 65 Pearson correlations between five face-processing measures and 13 additional measures in Study 2 (N = 107). This is a partial reproduction of the published analyses, not a complete replication of the original study.
+
+## Source publication
+
+McCaffery, J. M., Robertson, D. J., Young, A. W., & Burton, A. M. (2018). Individual differences in face identity processing. *Cognitive Research: Principles and Implications, 3*, Article 21.
+
+https://doi.org/10.1186/s41235-018-0112-9
+
+The supplementary dataset is identified in the project materials as CC BY 4.0. Consult the source record and license before redistributing the data.
+
+## Data
+
+- Source file: `data/raw/Additional_file_1.xlsx`
+- Worksheet: `Study 2`
+- Sample size: 107 rows
+- Dataset columns: 23
+- Variables used in the Table 4 analysis: 18
+
+The source dataset is not reproduced in this README. The current script reports zero missing values among the 18 selected analysis variables. Potential zero-coded values elsewhere in the dataset have not been independently verified against the authors' codebook.
+
+## Table 4 correlation analysis
+
+Five face-processing measures are correlated with 17 additional measures, producing 85 Pearson correlation tests (`scripts/03_reproduce_table4.R`).
+
+The script calculates Pearson's r, 95% confidence intervals, raw p-values, and Benjamini-Hochberg adjusted p-values across all 85 tests.
+
+### Current results
+
+| Summary | Result |
+|---|---:|
+| Participants | 107 |
+| Correlation tests | 85 |
+| Raw p-values below .05 | 10 |
+| BH-adjusted p-values below .05 | 5 |
+| BH-adjusted p-values below .20 | 8 |
+
+The .20 threshold is reported separately from the conventional .05 threshold, matching the original article's criterion. The eight results meeting the .20 threshold are listed in `results/face_recognition_original_table4_corrected_findings.csv`.
+
+The reanalysis was compared with the published Table 4 values in `scripts/05_table4_comparison.R`. See the discrepancy section below.
+
+The calculated results should be checked pair by pair against the original publication before being described as exact replications of its findings.
 
 ## Table 4 discrepancies
 
-Eight cells differ from the published values:
+The reanalysis reproduces all 85 correlations in Table 4 (`scripts/03_reproduce_table4.R`). Compared with the published values (`scripts/05_table4_comparison.R`), 77 cells fall within the published rounding band (the published two-decimal value ± .005). Eight cells fall outside it:
 
-| Pair | Published | Reanalysis | Note |
+| Pair | Published | Reanalysis | Outside band by |
 |---|---|---|---|
-| Face detection × Extraversion | −.05 | .04 (.0445) | Published CI [−0.15, 0.23] is centred on .04 |
-| BTWF × Openness | .01 | .10 (.0959) | Published CI [−0.10, 0.28] is centred on about .09 |
-| CFMT × Personal Distress | .01 | .00 (.0019) | Difference of .008 |
-| CFMT × Perspective Taking | .08 | .07 (.0747) | Difference of .005 |
-| CFMT × MFFT | .02 | .03 (.0262) | Difference of .006 |
-| CFMT × Navon Global | −.10 | −.09 (−.0940) | Difference of .006 |
-| CFMT × Agreeableness | −.07 | −.06 (−.0650) | Difference of .005 |
-| Face detection × Empathic Concern | −.06 | −.05 (−.0547) | Difference of .005 |
+| Face detection × Extraversion | −.05 | .0445 | .090 |
+| BTWF × Openness | .01 | .0959 | .081 |
+| CFMT × Personal Distress | .01 | .0019 | .003 |
+| CFMT × Perspective Taking | .08 | .0747 | .0003 |
+| CFMT × MFFT | .02 | .0262 | .001 |
+| CFMT × Navon Global | −.10 | −.0940 | .001 |
+| CFMT × Agreeableness | −.07 | −.0650 | .00003 |
+| Face detection × Empathic Concern | −.06 | −.0547 | .0003 |
 
-The corresponding author was contacted about the first three cells. He replied that he suspects transcription errors and will check the original data when able. The cause of all eight discrepancies remains unconfirmed.
+Two discrepancies are too large to be rounding: Face detection × Extraversion and BTWF × Openness. In the published table, the confidence intervals for both cells are centred on the reanalysis values (about .04 and .09), which suggests the printed point estimates may be wrong. The other six cells lie within 0.003 of the band and may reflect rounding or last-digit differences.
 
-## Multiple comparisons
-
-The original article does not state its correction family, so two families are reported.
-
-- **85 non-face correlations:** BH correction across all 85. At FDR .20, eight correlations are significant. These are the eight findings marked "d" in the published Table 4, and they are reproduced exactly. At FDR .05, five remain significant.
-- **Face–face pairs:** BH correction across the ten pairs. At BH < .05, three pairs are significant: GFMT–CFMT, CFMT–BTWF, and face detection–Mooney. At BH < .20, six are significant. The published text reports only GFMT–CFMT and CFMT–BTWF, which matches the .05 threshold, not .20.
-
-## One-factor confirmatory factor analysis (not preregistered)
-
-A one-factor model of the five face measures tests the general face-factor account proposed by McCaffery et al. (2018) and Verhallen et al. (2017). It was fitted with lavaan 0.7.3 (`scripts/06_cfa_one_factor.R`), using maximum likelihood, standardised variables, and the latent variance fixed at 1. Fit is judged against conventional cutoffs (CFI ≥ .95, RMSEA ≤ .06, SRMR ≤ .08; Hu & Bentler, 1999).
-
-**Fit:** χ²(5) = 9.10, p = .105; CFI = .920; TLI = .841; RMSEA = .087, 90% CI [.000, .177]; SRMR = .069. CFI and RMSEA fall short of the cutoffs. SRMR meets its cutoff.
-
-**Loadings:** CFMT .85, GFMT .58, BTWF .39, Mooney .27, face detection .19. The general factor is defined mainly by CFMT and GFMT.
-
-**Variance explained:** .265, the mean of the squared standardised loadings. This matches the original authors' estimate of about 25% of variance.
-
-**Bootstrap:** 1,000 resamples, fitted with `bounds = "pos.var"`. In 193 resamples (19.3%), at least one residual variance was exactly zero, which is a boundary solution. No resample failed to converge, produced an error, or had a loading above 1. The 807 resamples without a boundary solution gave a 95% interval of [.213, .333]. This interval is a sensitivity check and is not a reliable estimate of the sampling distribution.
-
-**Output files:**
-- `outputs/cfa_one_factor.txt`, `outputs/cfa_two_factor.txt`, `outputs/cfa_model_comparison.txt`, `outputs/cfa_two_factor_noCFMT.txt`
-- `outputs/cfa_boot_conditions_rerun.rds`: per-resample conditions (error, non-convergence, loading above 1, negative variance, zero variance), variance-explained values, and the boundary-solution flag.
-
-The earlier file `outputs/cfa_boot_1000_bounded.rds` reported 116 invalid resamples. Its procedure cannot be reproduced from the current code, so it is not used for any reported result.
-
-## Exploratory two-factor model (post hoc)
-
-After the one-factor results were examined, a two-factor model separated identity measures (GFMT, CFMT, BTWF) from perception measures (face detection, Mooney faces). It fits better than the one-factor model, Δχ²(1) = 7.44, p = .006. Because it was specified after inspecting the one-factor results, it is exploratory. Its identity factor depends heavily on CFMT. Without CFMT, the identity factor is weak (GFMT .35, BTWF .56), and the factor correlation is imprecise (r = .50, 95% CI [−.02, 1.01]).
+The cause of all eight discrepancies is unconfirmed. The corresponding author has been contacted about some of these cells, and he suspects transcription errors and will check the original data when able.
 
 ## Exploratory network analysis
 
-A Spearman-correlation network of all 22 variables was estimated with EBICglasso (qgraph, bootnet).
+The repository also contains an exploratory partial-correlation network analysis. The existing project notes report that the estimated network changed under alternative tuning settings. Therefore, network findings are considered exploratory and require cautious interpretation and independent confirmation.
 
-- The primary network at γ = .10 retains 17 edges. It was chosen after inspecting the sweep and is not preregistered.
-- A sensitivity network at γ = 0 retains 46 edges.
-- At γ = .05 through .30, the same 17 edges are retained. At γ = .50, none are retained.
-- Of the 17 primary-network edges, three have bootstrap intervals excluding zero: Neuroticism–Personal Distress, Perspective Taking–Empathic Concern, and GFMT–CFMT, all positive. Bootstrap statistics for all 17 edges are in `outputs/edge_accuracy_gamma010.csv`.
+See the existing analysis scripts and outputs for details. The network analysis is separate from the 65 Pearson correlations described above.
 
-**Case-dropping centrality stability** at γ = .10 (`outputs/centrality_stability_gamma010.csv`): strength CS = .206, closeness CS = 0, betweenness CS = 0. Node rankings should not be interpreted.
+## Project structure
 
-## Known limitations and open items
+```text
+face_recognition_replication/
+├── data/
+│   └── raw/
+│       └── Additional_file_1.xlsx
+├── scripts/
+│   ├── 02_replication.R
+│   ├── 03_network.R
+│   ├── 03_reproduce_table4.R
+│   └── 04_network_stability.R
+├── results/
+│   ├── face_recognition_descriptive_statistics.csv
+│   ├── face_recognition_original_table4_all_correlations.csv
+│   ├── face_recognition_original_table4_corrected_findings.csv
+│   └── session_info.txt
+├── docs/
+│   └── replication_report.md
+├── outputs/
+└── README.md
+```
 
-- BTWF contains 19 zero scores (17.8%). The published text reports 20%, about 21 participants. The difference is unresolved.
-- The network tuning parameter was selected after inspecting the sweep.
-- The CFA bootstrap uses positive-variance bounds, and 19.3% of resamples are boundary solutions.
-- Table 4 discrepancies are unconfirmed pending the author's check of the original data.
+## How to reproduce the Table 4 analysis
 
-## Citation
+1. Install R and RStudio.
+2. Obtain the supplementary dataset from the source publication and place it at `data/raw/Additional_file_1.xlsx`.
+3. Open the project file `face_recognition_replication.Rproj` in RStudio.
+4. Open `scripts/03_reproduce_table4.R`.
+5. Run the script using the **Source** button.
+6. Review the generated CSV files in `results/`.
 
-McCaffery, J. M., Robertson, D. J., Young, A. W., & Burton, A. M. (2018). Individual differences in face identity processing. *Cognitive Research: Principles and Implications*, 3, Article 21. https://doi.org/10.1186/s41235-018-0112-9
+The script checks the required column names and numeric data types before calculating correlations. It uses the `readxl` package to import the workbook.
 
-Reanalysis code commit: `2a9a9636958bbdcf9098dc5ecdd569cb6368a88f`
+## Documentation
 
-## Author
+- `docs/replication_report.md`: methods, results, reproducibility notes, and limitations.
+- `results/session_info.txt`: R session and package information from the analysis run.
+- `README_backup_before_update.md`: backup of the README that preceded this update, if retained in the project.
 
-Areeba Fatima, Riphah International University, Lahore, Pakistan (alumna). ORCID: https://orcid.org/0009-0002-3981-3319
+## Limitations
 
-## Licence
+- The current Table 4 script reproduces only a defined subset of the original study's analyses.
+- Correlations are observational and do not establish causation.
+- Multiple-comparison conclusions depend on the family of tests and correction threshold.
+- Potential zero-coded values require verification against the original scoring documentation.
+- Exploratory network results may be sensitive to tuning parameters and sample characteristics.
 
-- **Code** (scripts in `scripts/` and `verify_manuscript.R`): MIT License. See `LICENSE`.
-- **Documentation** (README and manuscript): Creative Commons Attribution 4.0 International (CC BY 4.0).
-- **Data:** Additional file 1 of McCaffery et al. (2018) is distributed under CC BY 4.0 by the original authors. It is not redistributed in this repository.
+## Research integrity
+
+This repository aims to make the analysis workflow transparent and reproducible. Claims of replication should be limited to analyses that have been checked against the original publication. The supplementary data should be redistributed only in accordance with its applicable license and attribution requirements.

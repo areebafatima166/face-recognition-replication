@@ -1,0 +1,9 @@
+"face_measure","comparison_measure","r","r_published","dist_outside"
+"BTWF Accuracy (%)","Big Five Openness",0.0959461061657963,0.01,0.0809461061657963
+"CFMT Accuracy (%)","Big Five Agreeableness",-0.0649666671567098,-0.07,3.33328432902029e-05
+"CFMT Accuracy (%)","IRI Personal Distress",0.00189527720771591,0.01,0.00310472279228409
+"CFMT Accuracy (%)","IRI Perspective Taking",0.0747202389100816,0.08,0.0002797610899184
+"CFMT Accuracy (%)","MFFT (%)",0.0261812669015398,0.02,0.0011812669015398
+"CFMT Accuracy (%)","Navon Global (%)",-0.0940156445348637,-0.1,0.000984355465136301
+"Face Detection (%)","Big Five Extraversion",0.0445094240833125,-0.05,0.0895094240833125
+"Face Detection (%)","IRI Empathic Concern",-0.0547367249132354,-0.06,0.0002632750867646

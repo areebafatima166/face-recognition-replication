@@ -1,6 +1,9 @@
 data/
-outputs/
+outputs/*
 .Rproj.user/
 .RData
 .Rhistory
 *.Rproj
+!outputs/edge_accuracy_gamma010.csv
+!outputs/centrality_stability_gamma010.csv
+!outputs/cfa_one_factor.txt

@@ -1,0 +1,86 @@
+"face_measure","comparison_measure","published","r","match"
+"BTWF Accuracy (%)","BADS Card Sorting (%)",0.14,0.135964587999134,TRUE
+"BTWF Accuracy (%)","Big Five Agreeableness",0.02,0.0170093216470586,TRUE
+"BTWF Accuracy (%)","Big Five Conscientousness",-0.03,-0.0295425935807735,TRUE
+"BTWF Accuracy (%)","Big Five Extraversion",0.04,0.0359465914634258,TRUE
+"BTWF Accuracy (%)","Big Five Neuroticism",-0.04,-0.0360356312993664,TRUE
+"BTWF Accuracy (%)","Big Five Openness",0.01,0.0959461061657963,FALSE
+"BTWF Accuracy (%)","BORB Total (%)",0.06,0.0603427361334781,TRUE
+"BTWF Accuracy (%)","IRI Empathic Concern",0.06,0.057642285130319,TRUE
+"BTWF Accuracy (%)","IRI Fantasy Scale",0.15,0.148758236820917,TRUE
+"BTWF Accuracy (%)","IRI Personal Distress",-0.06,-0.0557556584737346,TRUE
+"BTWF Accuracy (%)","IRI Perspective Taking",0.13,0.130725004370349,TRUE
+"BTWF Accuracy (%)","Letter Detection (%)",0.08,0.075641050063403,TRUE
+"BTWF Accuracy (%)","MFFT (%)",0,-0.00420476676462974,TRUE
+"BTWF Accuracy (%)","Navon Global (%)",0.09,0.090960033242905,TRUE
+"BTWF Accuracy (%)","Navon Local (%)",0.03,0.0293680709404062,TRUE
+"BTWF Accuracy (%)","Silhouettes Total (%)",0.29,0.286530086023927,TRUE
+"BTWF Accuracy (%)","VOSP PD (%)",0.06,0.0559919894098346,TRUE
+"CFMT Accuracy (%)","BADS Card Sorting (%)",0.12,0.116274785061655,TRUE
+"CFMT Accuracy (%)","Big Five Agreeableness",-0.07,-0.0649666671567098,FALSE
+"CFMT Accuracy (%)","Big Five Conscientousness",0.08,0.0772108963067724,TRUE
+"CFMT Accuracy (%)","Big Five Extraversion",0,0.00172277307944755,TRUE
+"CFMT Accuracy (%)","Big Five Neuroticism",-0.05,-0.0461512482141952,TRUE
+"CFMT Accuracy (%)","Big Five Openness",0.11,0.114194371054003,TRUE
+"CFMT Accuracy (%)","BORB Total (%)",-0.05,-0.0475422339095712,TRUE
+"CFMT Accuracy (%)","IRI Empathic Concern",0.06,0.0558441465505848,TRUE
+"CFMT Accuracy (%)","IRI Fantasy Scale",0.07,0.070543329473814,TRUE
+"CFMT Accuracy (%)","IRI Personal Distress",0.01,0.00189527720771591,FALSE
+"CFMT Accuracy (%)","IRI Perspective Taking",0.08,0.0747202389100816,FALSE
+"CFMT Accuracy (%)","Letter Detection (%)",0.07,0.0706144602888586,TRUE
+"CFMT Accuracy (%)","MFFT (%)",0.02,0.0261812669015398,FALSE
+"CFMT Accuracy (%)","Navon Global (%)",-0.1,-0.0940156445348637,FALSE
+"CFMT Accuracy (%)","Navon Local (%)",0.03,0.0326890132008931,TRUE
+"CFMT Accuracy (%)","Silhouettes Total (%)",0.29,0.291293728198093,TRUE
+"CFMT Accuracy (%)","VOSP PD (%)",0.14,0.141054619914659,TRUE
+"Face Detection (%)","BADS Card Sorting (%)",-0.13,-0.131063287356537,TRUE
+"Face Detection (%)","Big Five Agreeableness",-0.14,-0.138678050112554,TRUE
+"Face Detection (%)","Big Five Conscientousness",-0.07,-0.066196296932245,TRUE
+"Face Detection (%)","Big Five Extraversion",-0.05,0.0445094240833125,FALSE
+"Face Detection (%)","Big Five Neuroticism",0.02,0.019950298603313,TRUE
+"Face Detection (%)","Big Five Openness",0.12,0.124196009330588,TRUE
+"Face Detection (%)","BORB Total (%)",0.01,0.0108567588012923,TRUE
+"Face Detection (%)","IRI Empathic Concern",-0.06,-0.0547367249132354,FALSE
+"Face Detection (%)","IRI Fantasy Scale",0.05,0.0531453491503791,TRUE
+"Face Detection (%)","IRI Personal Distress",0.03,0.0261669828403726,TRUE
+"Face Detection (%)","IRI Perspective Taking",0.03,0.0330110024778377,TRUE
+"Face Detection (%)","Letter Detection (%)",0.27,0.270529148147398,TRUE
+"Face Detection (%)","MFFT (%)",0.06,0.0638869562362347,TRUE
+"Face Detection (%)","Navon Global (%)",0.16,0.157712750388597,TRUE
+"Face Detection (%)","Navon Local (%)",0.16,0.161342578654038,TRUE
+"Face Detection (%)","Silhouettes Total (%)",0.12,0.119927993654941,TRUE
+"Face Detection (%)","VOSP PD (%)",-0.03,-0.0324407258201655,TRUE
+"GFMT Accuracy (%)","BADS Card Sorting (%)",0.2,0.204248788569919,TRUE
+"GFMT Accuracy (%)","Big Five Agreeableness",-0.05,-0.0535697334814914,TRUE
+"GFMT Accuracy (%)","Big Five Conscientousness",0.17,0.170795730572824,TRUE
+"GFMT Accuracy (%)","Big Five Extraversion",0.03,0.0322057251445283,TRUE
+"GFMT Accuracy (%)","Big Five Neuroticism",0.02,0.0234327536096259,TRUE
+"GFMT Accuracy (%)","Big Five Openness",0.23,0.230560908153396,TRUE
+"GFMT Accuracy (%)","BORB Total (%)",0.13,0.134359978763214,TRUE
+"GFMT Accuracy (%)","IRI Empathic Concern",0.2,0.202597921473041,TRUE
+"GFMT Accuracy (%)","IRI Fantasy Scale",0.16,0.161486195742731,TRUE
+"GFMT Accuracy (%)","IRI Personal Distress",-0.1,-0.10087951775328,TRUE
+"GFMT Accuracy (%)","IRI Perspective Taking",0.17,0.170172157108933,TRUE
+"GFMT Accuracy (%)","Letter Detection (%)",0.14,0.138362145743823,TRUE
+"GFMT Accuracy (%)","MFFT (%)",0.37,0.367359936759759,TRUE
+"GFMT Accuracy (%)","Navon Global (%)",-0.01,-0.00508576805616341,TRUE
+"GFMT Accuracy (%)","Navon Local (%)",0.27,0.273724064981698,TRUE
+"GFMT Accuracy (%)","Silhouettes Total (%)",0.14,0.143551238987081,TRUE
+"GFMT Accuracy (%)","VOSP PD (%)",0.1,0.100136724637804,TRUE
+"Mooney Faces (%)","BADS Card Sorting (%)",0.06,0.061616163594205,TRUE
+"Mooney Faces (%)","Big Five Agreeableness",-0.01,-0.00535832731389167,TRUE
+"Mooney Faces (%)","Big Five Conscientousness",-0.05,-0.0453504717957818,TRUE
+"Mooney Faces (%)","Big Five Extraversion",0.07,0.0735280328614258,TRUE
+"Mooney Faces (%)","Big Five Neuroticism",-0.01,-0.0112635879929354,TRUE
+"Mooney Faces (%)","Big Five Openness",0.13,0.131110539554658,TRUE
+"Mooney Faces (%)","BORB Total (%)",0.33,0.333663293262269,TRUE
+"Mooney Faces (%)","IRI Empathic Concern",0.1,0.0963824651548812,TRUE
+"Mooney Faces (%)","IRI Fantasy Scale",-0.05,-0.0524416850032199,TRUE
+"Mooney Faces (%)","IRI Personal Distress",-0.02,-0.0233066519130393,TRUE
+"Mooney Faces (%)","IRI Perspective Taking",0.03,0.0285954611007082,TRUE
+"Mooney Faces (%)","Letter Detection (%)",0.06,0.0562600662371272,TRUE
+"Mooney Faces (%)","MFFT (%)",0.08,0.0791611618468883,TRUE
+"Mooney Faces (%)","Navon Global (%)",0,-0.00179897031681827,TRUE
+"Mooney Faces (%)","Navon Local (%)",-0.01,-0.0122216357251942,TRUE
+"Mooney Faces (%)","Silhouettes Total (%)",0.5,0.497936493682193,TRUE
+"Mooney Faces (%)","VOSP PD (%)",0.09,0.0881818659143624,TRUE

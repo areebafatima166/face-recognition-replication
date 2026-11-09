@@ -1,0 +1,81 @@
+lavaan 0.7-3 ended normally after 14 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        10
+
+  Number of observations                           107
+
+Model Test User Model:
+                                                      
+  Test statistic                                 9.096
+  Degrees of freedom                                 5
+  P-value (Chi-square)                           0.105
+                                                      
+  Browne's residual (NT model-based) test             
+  Test statistic                                 9.112
+  Degrees of freedom                                 5
+  P-value (Chi-square)                           0.105
+
+Model Test Baseline Model:
+
+  Test statistic                                61.488
+  Degrees of freedom                                10
+  P-value                                        0.000
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    0.920
+  Tucker-Lewis Index (TLI)                       0.841
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)               -730.424
+  Loglikelihood unrestricted model (H1)       -725.876
+                                                      
+  Akaike (AIC)                                1480.848
+  Bayesian (BIC)                              1507.577
+  Sample-size adjusted Bayesian (SABIC)       1475.981
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.087
+  90 Percent confidence interval - lower         0.000
+  90 Percent confidence interval - upper         0.177
+  P-value H_0: RMSEA <= 0.050                    0.207
+  P-value H_0: RMSEA >= 0.080                    0.623
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.069
+
+Goodness of Fit Index:
+
+  Goodness of Fit Index (GFI)                    0.985
+  90 Percent confidence interval - lower         0.941
+  90 Percent confidence interval - upper         1.000
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  g =~                                                                  
+    GFMT              0.577    0.119    4.855    0.000    0.577    0.580
+    CFMT              0.849    0.139    6.116    0.000    0.849    0.853
+    BTWF              0.391    0.110    3.541    0.000    0.391    0.393
+    FaceDet           0.184    0.109    1.683    0.092    0.184    0.185
+    Mooney            0.268    0.109    2.451    0.014    0.268    0.270
+
+Variances:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .GFMT              0.658    0.129    5.099    0.000    0.658    0.664
+   .CFMT              0.270    0.200    1.351    0.177    0.270    0.272
+   .BTWF              0.838    0.124    6.762    0.000    0.838    0.846
+   .FaceDet           0.957    0.132    7.234    0.000    0.957    0.966
+   .Mooney            0.919    0.129    7.119    0.000    0.919    0.927
+    g                 1.000                               1.000    1.000
+
