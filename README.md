@@ -20,7 +20,7 @@ The supplementary dataset is identified in the project materials as CC BY 4.0. C
 - Worksheet: `Study 2`
 - Sample size: 107 rows
 - Dataset columns: 23
-- Variables used in the Table 4 analysis: 18
+- Variables used in the Table 4 analysis: 22 (5 face measures and 17 comparison measures)
 
 The source dataset is not reproduced in this README. The current script reports zero missing values among the 18 selected analysis variables. Potential zero-coded values elsewhere in the dataset have not been independently verified against the authors' codebook.
 
@@ -30,7 +30,7 @@ Five face-processing measures are correlated with 17 additional measures, produc
 
 ### Reproduction
 
-All 85 correlations were recomputed. Compared with the published values (`scripts/05_table4_comparison.R`), 77 match to two decimals. Eight do not, described below.
+All 85 correlations were recomputed. Compared with the published values (`scripts/05_table4_comparison.R`), 77 match to two decimals. Eight do not match to two decimals, described below.
 
 ### Current results (Study 2, n = 107)
 
@@ -72,29 +72,27 @@ The corresponding author has been contacted about three cells (face detection ×
 
 ## Exploratory network analysis
 
-The repository also contains an exploratory partial-correlation network analysis. The existing project notes report that the estimated network changed under alternative tuning settings. Therefore, network findings are considered exploratory and require cautious interpretation and independent confirmation.
+The primary network at γ = .10 retains 17 edges; the sensitivity network at γ = 0 retains 46. Three edges have bootstrap intervals excluding zero: Neuroticism–Personal Distress, Perspective Taking–Empathic Concern, and GFMT–CFMT. Case-dropping stability at γ = .10 gives strength CS = .206, but 350 of 1,000 draws produced an empty network, so this estimate partly reflects network collapse. Node rankings should not be interpreted.
 
-See the existing analysis scripts and outputs for details. The network analysis is separate from the 85 Pearson correlations described above.
+The network results are exploratory: the tuning parameter was chosen after inspecting the sweep, and the network analysis is separate from the 85 Pearson correlations described above.
 
 ## Project structure
 
 ```text
 face_recognition_replication/
-├── data/
-│   └── raw/
-│       └── Additional_file_1.xlsx
+├── data/raw/                                 (not published; see below)
+│   └── Additional_file_1.xlsx
 ├── scripts/
-│   ├── 02_replication.R
-│   ├── 03_network.R
-│   ├── 03_reproduce_table4.R
-│   └── 04_network_stability.R
-├── results/
-│   ├── face_recognition_descriptive_statistics.csv
-│   ├── face_recognition_original_table4_all_correlations.csv
-│   ├── face_recognition_original_table4_corrected_findings.csv
-│   └── session_info.txt
-│   └── replication_report.md
-├── outputs/
+│   ├── 02_replication.R                      correlations and correction families
+│   ├── 03_network.R                          exploratory network and bootstrap
+│   ├── 03_reproduce_table4.R                 85 Table 4 correlations
+│   ├── 04_network_stability.R                case-dropping stability
+│   ├── 05_table4_comparison.R                comparison with published values
+│   ├── 06_cfa_one_factor.R                   one-factor CFA and bootstrap
+│   └── 07_cfa_sensitivity.R                  exploratory two-factor model
+├── verify_manuscript.R                       recomputes key manuscript values
+├── results/                                  summary tables and verification output
+├── outputs/                                  model fits, bootstrap files, network outputs
 └── README.md
 ```
 

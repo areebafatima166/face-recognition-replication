@@ -1,8 +1,8 @@
 # ============================================================
 # 07_cfa_sensitivity.R
 # Exploratory two-factor model and no-CFMT sensitivity check
-# Post hoc: fitted after the one-factor model failed H1
-# Requires fit1 from 06_cfa_preregistered.R
+# Post hoc: fitted after the one-factor results were examined
+# Requires fit1 from 06_cfa_one_factor.R
 # ============================================================
 
 library(readxl)
