@@ -93,7 +93,6 @@ face_recognition_replication/
 │   ├── face_recognition_original_table4_all_correlations.csv
 │   ├── face_recognition_original_table4_corrected_findings.csv
 │   └── session_info.txt
-├── docs/
 │   └── replication_report.md
 ├── outputs/
 └── README.md
@@ -103,18 +102,16 @@ face_recognition_replication/
 
 1. Install R and RStudio.
 2. Obtain the supplementary dataset from the source publication and place it at `data/raw/Additional_file_1.xlsx`.
-3. Open the project file `face_recognition_replication.Rproj` in RStudio.
-4. Open `scripts/03_reproduce_table4.R`.
-5. Run the script using the **Source** button.
+3. Set the working directory to the project root.
+4. Run the scripts in `scripts/` in order: `02` through `07`, then `verify_manuscript.R`.
+5. Check the output with `verify_manuscript.R` (expected: 43 of 43 checks pass).
 6. Review the generated CSV files in `results/`.
 
 The script checks the required column names and numeric data types before calculating correlations. It uses the `readxl` package to import the workbook.
 
 ## Documentation
 
-- `docs/replication_report.md`: methods, results, reproducibility notes, and limitations.
 - `results/session_info.txt`: R session and package information from the analysis run.
-- `README_backup_before_update.md`: backup of the README that preceded this update, if retained in the project.
 
 ## Limitations
 
@@ -127,3 +124,19 @@ The script checks the required column names and numeric data types before calcul
 ## Research integrity
 
 This repository aims to make the analysis workflow transparent and reproducible. Claims of replication should be limited to analyses that have been checked against the original publication. The supplementary data should be redistributed only in accordance with its applicable license and attribution requirements.
+
+## Author
+
+Areeba Fatima, Riphah International University, Lahore, Pakistan (alumna). ORCID: https://orcid.org/0009-0002-3981-3319
+
+## Licence
+
+- **Code** (scripts in `scripts/` and `verify_manuscript.R`): MIT License. See `LICENSE`.
+- **Documentation** (README and manuscript): Creative Commons Attribution 4.0 International (CC BY 4.0).
+- **Data:** Additional file 1 of McCaffery et al. (2018) is distributed under CC BY 4.0 by the original authors. It is not redistributed in this repository.
+
+## Citation
+
+McCaffery, J. M., Robertson, D. J., Young, A. W., & Burton, A. M. (2018). Individual differences in face identity processing. *Cognitive Research: Principles and Implications*, 3, Article 21. https://doi.org/10.1186/s41235-018-0112-9
+
+Analysis code and outputs: commit `c4d3d33d52b209af0fa07526adbe6590b3fb0ffd`.
