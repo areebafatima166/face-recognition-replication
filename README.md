@@ -4,7 +4,7 @@
 
 This project examines individual differences in face identity processing using supplementary data from McCaffery et al. (2018). It includes a reproduction of selected correlation analyses and exploratory network analyses.
 
-**Scope:** The current Table 4 script reproduces 65 Pearson correlations between five face-processing measures and 13 additional measures in Study 2 (N = 107). This is a partial reproduction of the published analyses, not a complete replication of the original study.
+**Scope:** The Table 4 script reproduces all 85 Pearson correlations between five face-processing measures and 17 additional measures in Study 2 (N = 107). This is a reproduction of the published correlation analysis, not a complete replication of the original study.
 
 ## Source publication
 
@@ -26,11 +26,13 @@ The source dataset is not reproduced in this README. The current script reports 
 
 ## Table 4 correlation analysis
 
-Five face-processing measures are correlated with 17 additional measures, producing 85 Pearson correlation tests (`scripts/03_reproduce_table4.R`).
+Five face-processing measures are correlated with 17 additional measures, producing 85 Pearson correlation tests (`scripts/03_reproduce_table4.R`). For each test the script computes Pearson's r, a 95% confidence interval, a raw p-value, and a Benjamini-Hochberg adjusted p-value.
 
-The script calculates Pearson's r, 95% confidence intervals, raw p-values, and Benjamini-Hochberg adjusted p-values across all 85 tests.
+### Reproduction
 
-### Current results
+All 85 correlations were recomputed. Compared with the published values (`scripts/05_table4_comparison.R`), 77 match to two decimals. Eight do not, described below.
+
+### Current results (Study 2, n = 107)
 
 | Summary | Result |
 |---|---:|
@@ -40,36 +42,39 @@ The script calculates Pearson's r, 95% confidence intervals, raw p-values, and B
 | BH-adjusted p-values below .05 | 5 |
 | BH-adjusted p-values below .20 | 8 |
 
-The .20 threshold is reported separately from the conventional .05 threshold, matching the original article's criterion. The eight results meeting the .20 threshold are listed in `results/face_recognition_original_table4_corrected_findings.csv`.
+The .20 threshold is reported alongside the conventional .05 threshold, following the original article's criterion. The eight correlations significant at BH < .20 are the eight marked as significant in the published table, and they are listed in `results/face_recognition_original_table4_corrected_findings.csv`.
 
-The reanalysis was compared with the published Table 4 values in `scripts/05_table4_comparison.R`. See the discrepancy section below.
+### Multiple comparisons
 
-The calculated results should be checked pair by pair against the original publication before being described as exact replications of its findings.
+The original article does not state its correction family, so two families are reported.
+
+- **Table 4 correlations (85 tests):** Benjamini-Hochberg correction across all 85. Eight are significant at BH < .20 and five at BH < .05. Ten are significant before correction (p < .05).
+- **Face-face pairs (10 tests):** Benjamini-Hochberg correction across the ten pairs. Three pairs are significant at BH < .05: GFMT–CFMT, CFMT–BTWF, and face detection–Mooney. Six are significant at BH < .20. The published text reports GFMT–CFMT and CFMT–BTWF, which matches the .05 threshold rather than .20.
 
 ## Table 4 discrepancies
 
-The reanalysis reproduces all 85 correlations in Table 4 (`scripts/03_reproduce_table4.R`). Compared with the published values (`scripts/05_table4_comparison.R`), 77 cells fall within the published rounding band (the published two-decimal value ± .005). Eight cells fall outside it:
+Compared with the published values, 77 cells fall within the published two-decimal rounding band (the published value ± .005). Eight cells fall outside it:
 
 | Pair | Published | Reanalysis | Outside band by |
 |---|---|---|---|
 | Face detection × Extraversion | −.05 | .0445 | .090 |
 | BTWF × Openness | .01 | .0959 | .081 |
 | CFMT × Personal Distress | .01 | .0019 | .003 |
-| CFMT × Perspective Taking | .08 | .0747 | .0003 |
 | CFMT × MFFT | .02 | .0262 | .001 |
 | CFMT × Navon Global | −.10 | −.0940 | .001 |
-| CFMT × Agreeableness | −.07 | −.0650 | .00003 |
+| CFMT × Perspective Taking | .08 | .0747 | .0003 |
 | Face detection × Empathic Concern | −.06 | −.0547 | .0003 |
+| CFMT × Agreeableness | −.07 | −.0650 | .00003 |
 
-Two discrepancies are too large to be rounding: Face detection × Extraversion and BTWF × Openness. In the published table, the confidence intervals for both cells are centred on the reanalysis values (about .04 and .09), which suggests the printed point estimates may be wrong. The other six cells lie within 0.003 of the band and may reflect rounding or last-digit differences.
+Two discrepancies are too large to be rounding: face detection × Extraversion and BTWF × Openness. The published 95% confidence intervals for these cells are centred on the reanalysis values (Extraversion [−0.15, 0.23], midpoint .04; Openness [−0.10, 0.28], midpoint about .09). This suggests the printed point estimates may be wrong. The other six cells lie within .003 of the rounding band and may reflect rounding or last-digit differences.
 
-The cause of all eight discrepancies is unconfirmed. The corresponding author has been contacted about some of these cells, and he suspects transcription errors and will check the original data when able.
+The corresponding author has been contacted about three cells (face detection × Extraversion, BTWF × Openness, and CFMT × Personal Distress). He suspects transcription errors and will check the original data when able. The cause of all eight discrepancies is unconfirmed.
 
 ## Exploratory network analysis
 
 The repository also contains an exploratory partial-correlation network analysis. The existing project notes report that the estimated network changed under alternative tuning settings. Therefore, network findings are considered exploratory and require cautious interpretation and independent confirmation.
 
-See the existing analysis scripts and outputs for details. The network analysis is separate from the 65 Pearson correlations described above.
+See the existing analysis scripts and outputs for details. The network analysis is separate from the 85 Pearson correlations described above.
 
 ## Project structure
 
