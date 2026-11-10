@@ -22,7 +22,7 @@ The supplementary dataset is identified in the project materials as CC BY 4.0. C
 - Dataset columns: 23
 - Variables used in the Table 4 analysis: 22 (5 face measures and 17 comparison measures)
 
-The source dataset is not reproduced in this README. The current script reports zero missing values among the 18 selected analysis variables. Potential zero-coded values elsewhere in the dataset have not been independently verified against the authors' codebook.
+The source dataset is not reproduced in this README. The current script reports zero missing values among the 22 selected analysis variables. Potential zero-coded values elsewhere in the dataset have not been independently verified against the authors' codebook.
 
 ## Table 4 correlation analysis
 
